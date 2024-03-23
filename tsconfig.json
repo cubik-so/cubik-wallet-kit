@@ -1,3 +1,4 @@
 {
-  "extends": "@repo/typescript-config/base.json"
+    "extends": "@cubik-wallet/configs/tsconfig/index.json",
+    "include": [".eslintrc.js"]
 }

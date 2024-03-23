@@ -1,20 +1,22 @@
 {
-  "name": "cubik-wallet-kit",
-  "private": true,
-  "scripts": {
-    "build": "turbo build",
-    "dev": "turbo dev",
-    "lint": "turbo lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
-  },
-  "devDependencies": {
-    "@repo/eslint-config": "workspace:*",
-    "@repo/typescript-config": "workspace:*",
-    "prettier": "^3.2.5",
-    "turbo": "latest"
-  },
-  "packageManager": "pnpm@8.9.0",
-  "engines": {
-    "node": ">=18"
-  }
+    "name": "cubik-wallet-kit",
+    "private": true,
+    "scripts": {
+        "build": "NODE_ENV=production dotenv -- turbo run build",
+        "dev": "NODE_ENV=development dotenv --  turbo run dev",
+        "start": "NODE_ENV=production dotenv -- turbo run start",
+        "type-check": "tsc --noEmit",
+        "format": "prettier --write \"**/*.{ts,tsx,md,json}\" --ignore-path .prettierignore"
+    },
+    "devDependencies": {
+        "@cubik-wallet/configs": "workspace:*",
+        "@types/node": "^20.11.30",
+        "prettier": "^3.2.5",
+        "turbo": "latest",
+        "typescript": "^5.4.3"
+    },
+    "packageManager": "pnpm@8.9.0",
+    "engines": {
+        "node": ">=18"
+    }
 }
