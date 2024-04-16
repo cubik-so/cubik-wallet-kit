@@ -2,14 +2,20 @@
     "name": "core",
     "version": "1.0.0",
     "description": "",
-    "main": "index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
+    "main": "src/index.ts",
+    "type": "module",
+    "scripts": {},
     "keywords": [],
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "@cubik-wallet/configs": "workspace:*"
+        "@cubik-wallet/configs": "workspace:*",
+        "@solana/wallet-adapter-base": "^0.9.23",
+        "@solana/web3.js": "^1.91.4"
+    },
+    "devDependencies": {
+        "@types/node": "^20.11.30",
+        "tsup": "^8.0.2",
+        "typescript": "^5.4.3"
     }
 }
