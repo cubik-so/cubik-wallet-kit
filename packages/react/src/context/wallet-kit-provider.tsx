@@ -1,8 +1,11 @@
 import { WalletProvider } from '@solana/wallet-adapter-react'
-import { Adapter } from '@solana/wallet-adapter-base'
-import { WalletKitConfig } from '../config.js'
 import React from 'react'
-import { WalletKitValueProvider } from './wallet-kit-value-provider.js'
+import { SolflareWalletAdapter } from '@solana/wallet-adapter-solflare'
+import { PhantomWalletAdapter } from '@solana/wallet-adapter-phantom'
+import { WalletKitValueProvider } from './wallet-kit-value-provider'
+import type { Adapter } from '@solana/wallet-adapter-base'
+import type { WalletKitConfig } from '../config'
+import { TestCard } from '../test'
 
 // Define the props expected by the WalletKitProvider component.
 interface WalletKitProviderProps {
@@ -19,15 +22,19 @@ export const WalletKitProvider = ({
     config,
     children,
 }: WalletKitProviderProps) => {
+    const defaultWallets = [new SolflareWalletAdapter(), new PhantomWalletAdapter()] as any
     return (
         <WalletProvider
             autoConnect={config.autoConnect} // Automatically connect to the wallet on load, if configured.
             onError={() => {
                 // Placeholder for error handling logic. Implement specific error handling here.
             }}
-            wallets={formattedWallet ? [] : wallets} // Pass formatted or original wallets array based on the formattedWallet prop.
+            wallets={formattedWallet ? [] : wallets.length === 0 ? defaultWallets : wallets} // Pass formatted or original wallets array based on the formattedWallet prop.
         >
-            <WalletKitValueProvider>{children}</WalletKitValueProvider>
+            <WalletKitValueProvider>
+                <TestCard wallets={defaultWallets} />
+                {/* {children} */}
+            </WalletKitValueProvider>
         </WalletProvider>
     )
 }

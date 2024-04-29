@@ -1,4 +1,4 @@
-import { Cluster } from '@solana/web3.js'
+import type { Cluster } from '@solana/web3.js'
 
 export type WalletKitConfig = {
     env: Cluster

@@ -1,5 +1,5 @@
 {
-    "name": "react",
+    "name": "@wallet-kit/react",
     "version": "1.0.0",
     "description": "",
     "main": "index.js",
@@ -18,10 +18,13 @@
     },
     "dependencies": {
         "@solana/wallet-adapter-base": "^0.9.23",
+        "@solana/wallet-adapter-phantom": "^0.9.24",
         "@solana/wallet-adapter-react": "^0.15.35",
+        "@solana/wallet-adapter-solflare": "^0.6.28",
         "@solana/web3.js": "^1.91.4",
+        "core": "workspace:*",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
-        "core": "workspace:*"
+        "wallet-adapter-phantom": "link:@@solana/wallet-adapter-phantom"
     }
 }

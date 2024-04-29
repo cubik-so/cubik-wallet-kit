@@ -1,5 +1,6 @@
-import { DEFAULT_CONTEXT, WalletContextState } from 'core'
+import { DEFAULT_CONTEXT } from 'core'
 import React, { useMemo } from 'react'
+import type { WalletContextState } from 'core'
 
 interface Props {
     children: React.ReactNode
