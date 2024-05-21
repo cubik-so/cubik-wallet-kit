@@ -1,11 +1,21 @@
-import { WalletProvider } from '@solana/wallet-adapter-react'
-import React from 'react'
-import { SolflareWalletAdapter } from '@solana/wallet-adapter-solflare'
+import type { Adapter, WalletError } from '@solana/wallet-adapter-base'
 import { PhantomWalletAdapter } from '@solana/wallet-adapter-phantom'
-import { WalletKitValueProvider } from './wallet-kit-value-provider'
-import type { Adapter } from '@solana/wallet-adapter-base'
+import { WalletProvider } from '@solana/wallet-adapter-react'
+import { SolflareWalletAdapter } from '@solana/wallet-adapter-solflare'
+import { ResponsiveModal } from '@squaress/ui'
+import { MainScreen } from '../components/main-screen'
+import type { WalletKitContextState } from 'core'
+import { WALLET_KIT_DEFAULT_CONTEXT } from 'core'
+import React, { useState } from 'react'
 import type { WalletKitConfig } from '../config'
-import { TestCard } from '../test'
+import { WalletKitValueProvider } from './wallet-kit-value-provider'
+export const WalletKitContext = React.createContext<WalletKitContextState>(
+    WALLET_KIT_DEFAULT_CONTEXT as WalletKitContextState,
+)
+
+export const useWalletKitContext = (): WalletKitContextState => {
+    return React.useContext(WalletKitContext)
+}
 
 // Define the props expected by the WalletKitProvider component.
 interface WalletKitProviderProps {
@@ -22,19 +32,38 @@ export const WalletKitProvider = ({
     config,
     children,
 }: WalletKitProviderProps) => {
+    const [open, setOpen] = useState<boolean>(false)
     const defaultWallets = [new SolflareWalletAdapter(), new PhantomWalletAdapter()] as any
+    const [error, setError] = useState<WalletError | null>(null)
     return (
-        <WalletProvider
-            autoConnect={config.autoConnect} // Automatically connect to the wallet on load, if configured.
-            onError={() => {
-                // Placeholder for error handling logic. Implement specific error handling here.
+        <WalletKitContext.Provider
+            value={{
+                onClose: () => setOpen(false),
+                onOpen: () => setOpen(true),
+                open: open,
+                error: error,
             }}
-            wallets={formattedWallet ? [] : wallets.length === 0 ? defaultWallets : wallets} // Pass formatted or original wallets array based on the formattedWallet prop.
         >
-            <WalletKitValueProvider>
-                <TestCard wallets={defaultWallets} />
-                {/* {children} */}
-            </WalletKitValueProvider>
-        </WalletProvider>
+            <WalletProvider
+                autoConnect={config.autoConnect} // Automatically connect to the wallet on load, if configured.
+                onError={(e) => {
+                    // Setting Error
+                    setError(e)
+                }}
+                wallets={formattedWallet ? [] : wallets.length === 0 ? defaultWallets : wallets} // Pass formatted or original wallets array based on the formattedWallet prop.
+            >
+                <WalletKitValueProvider>
+                    <ResponsiveModal
+                        onClose={() => setOpen(false)}
+                        open={open}
+                        dialogSize="md"
+                        onOpenChange={() => setOpen(true)}
+                    >
+                        <MainScreen />
+                    </ResponsiveModal>
+                    {children}
+                </WalletKitValueProvider>
+            </WalletProvider>
+        </WalletKitContext.Provider>
     )
 }

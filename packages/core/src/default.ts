@@ -14,7 +14,27 @@ export interface Wallet {
     readyState: WalletReadyState
 }
 
-export interface WalletContextState {
+// Handles the global State of wallet modal/drawer
+export interface WalletKitContextState {
+    onOpen: () => void
+    onClose: () => void
+    open: boolean
+    error: Error | null
+}
+
+export const WALLET_KIT_DEFAULT_CONTEXT: Partial<WalletKitContextState> = {
+    onClose: () => {
+        return Promise.reject(logMissingProviderError('call', 'onClose'))
+    },
+    onOpen: () => {
+        return Promise.reject(logMissingProviderError('call', 'onOpen'))
+    },
+    open: false,
+    error: null,
+}
+
+// Handles the value for the connected adapter
+export interface WalletKitValueState {
     autoConnect: boolean
     wallets: Wallet[]
     wallet: Wallet | null
@@ -22,7 +42,7 @@ export interface WalletContextState {
     connecting: boolean
     connected: boolean
     disconnecting: boolean
-    
+
     select(walletName: WalletName | null): void
     connect(): Promise<void>
     disconnect(): Promise<void>
@@ -43,7 +63,7 @@ function logMissingProviderError(action: string, property: string) {
     return error
 }
 
-export const DEFAULT_CONTEXT: Partial<WalletContextState> = {
+export const DEFAULT_CONTEXT: Partial<WalletKitValueState> = {
     autoConnect: false,
     connecting: false,
     connected: false,

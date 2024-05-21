@@ -1,17 +1,17 @@
 import { DEFAULT_CONTEXT } from 'core'
 import React, { useMemo } from 'react'
-import type { WalletContextState } from 'core'
+import type { WalletKitValueState } from 'core'
 
 interface Props {
     children: React.ReactNode
 }
 // Create a context to manage and provide the wallet connection state throughout the app.
-export const WalletKitValueContext = React.createContext<WalletContextState>(
-    DEFAULT_CONTEXT as WalletContextState,
+export const WalletKitValueContext = React.createContext<WalletKitValueState>(
+    DEFAULT_CONTEXT as WalletKitValueState,
 )
 
 // Custom hook to provide easy access to the wallet connection state using the WalletKitValueContext.
-export const useWalletKit = (): WalletContextState => {
+export const useWalletKit = (): WalletKitValueState => {
     return React.useContext(WalletKitValueContext)
 }
 
