@@ -1,14 +1,16 @@
-import type { Adapter, WalletError } from '@solana/wallet-adapter-base'
+/* eslint-disable no-nested-ternary */
 import { PhantomWalletAdapter } from '@solana/wallet-adapter-phantom'
 import { WalletProvider } from '@solana/wallet-adapter-react'
 import { SolflareWalletAdapter } from '@solana/wallet-adapter-solflare'
-import { ResponsiveModal } from '@squaress/ui'
-import { MainScreen } from '../components/main-screen'
-import type { WalletKitContextState } from 'core'
 import { WALLET_KIT_DEFAULT_CONTEXT } from 'core'
 import React, { useState } from 'react'
-import type { WalletKitConfig } from '../config'
+import { MainScreen } from '../components/main-screen'
+import { ResponsiveModal } from '../lib/ui'
 import { WalletKitValueProvider } from './wallet-kit-value-provider'
+import type { WalletKitContextState } from 'core'
+import type { WalletKitConfig } from '../config'
+import type { Adapter, WalletError } from '@solana/wallet-adapter-base'
+
 export const WalletKitContext = React.createContext<WalletKitContextState>(
     WALLET_KIT_DEFAULT_CONTEXT as WalletKitContextState,
 )

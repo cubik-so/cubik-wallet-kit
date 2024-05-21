@@ -22,10 +22,12 @@
         "@solana/wallet-adapter-react": "^0.15.35",
         "@solana/wallet-adapter-solflare": "^0.6.28",
         "@solana/web3.js": "^1.91.4",
-        "@squaress/ui": "^0.0.23",
+        "@squaress/ui": "^0.0.29",
         "core": "workspace:*",
+        "framer-motion": "^10.18.0",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
+        "usehooks-ts": "^3.1.0",
         "wallet-adapter-phantom": "link:@@solana/wallet-adapter-phantom"
     }
 }
