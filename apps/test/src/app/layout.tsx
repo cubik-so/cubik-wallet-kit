@@ -3,8 +3,11 @@
 import { WalletKitProvider } from '@wallet-kit/react/src/context/wallet-kit-provider'
 
 import './globals.css'
-import { SquaresProvider, ThemeProvider } from '@squaress/ui'
+import { SquaresProvider } from '@squaress/ui/provider'
+import { ThemeProvider } from '@squaress/ui/useTheme'
 import '@squaress/ui/styles.css'
+import { PhantomWalletAdapter } from '@solana/wallet-adapter-phantom'
+import { SolflareWalletAdapter } from '@solana/wallet-adapter-solflare'
 
 export default function RootLayout({
     children,
@@ -21,8 +24,8 @@ export default function RootLayout({
                                 autoConnect: true,
                                 env: 'mainnet-beta',
                             }}
-                            formattedWallet={false}
-                            wallets={[]}
+                            formattedWallet={true}
+                            wallets={[new PhantomWalletAdapter(), new SolflareWalletAdapter()]}
                         >
                             {children}
                         </WalletKitProvider>

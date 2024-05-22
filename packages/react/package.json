@@ -22,7 +22,7 @@
         "@solana/wallet-adapter-react": "^0.15.35",
         "@solana/wallet-adapter-solflare": "^0.6.28",
         "@solana/web3.js": "^1.91.4",
-        "@squaress/ui": "^0.0.29",
+        "@squaress/ui": "^0.0.37",
         "core": "workspace:*",
         "framer-motion": "^10.18.0",
         "react": "^18.2.0",

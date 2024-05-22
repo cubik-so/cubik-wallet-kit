@@ -4,6 +4,7 @@ import { useMediaQuery } from 'usehooks-ts'
 import { useWalletKit } from '../context/wallet-kit-value-provider'
 import { Divider, Text } from '../lib/ui'
 import { AnimatePresence, MotionButton, MotionDiv, motion } from '../lib/framer'
+import { useWallet } from '@solana/wallet-adapter-react'
 
 const FooterComponent = ({ text, icon }: { icon: string; text: string }) => {
     return (
@@ -25,8 +26,8 @@ const FooterComponent = ({ text, icon }: { icon: string; text: string }) => {
 }
 
 const WalletOptions = () => {
-    const { wallet, wallets } = useWalletKit()
-    console.log('walletsss', wallet, wallets)
+    const { wallet } = useWalletKit()
+    const { wallets } = useWallet()
     const isMobileDevice = useMediaQuery('(max-width: 640px)')
     const [showMore, setShowMore] = useState<boolean>(false)
 
@@ -73,7 +74,10 @@ const WalletOptions = () => {
                         overflowY: 'scroll',
                     }}
                 >
-                    wallet list
+                    {wallets &&
+                        wallets.map((e) => {
+                            return <>{e.adapter.name}</>
+                        })}
                 </motion.div>
             </AnimatePresence>
             <AnimatePresence initial={false}>
