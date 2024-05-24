@@ -39,11 +39,20 @@ export const WalletKitProvider = ({
     const [error, setError] = useState<WalletError | null>(null)
     const [theme, setTheme] = useState<'light' | 'dark'>('light')
     const [lastConnected, setLastConnected] = useState<WalletAdapter | null>(null)
+
+    const onClose = () => {
+        setOpen(false)
+    }
+    const onOpen = () => {
+        setLastConnected(null)
+        setError(null)
+        setOpen(true)
+    }
     return (
         <WalletKitContext.Provider
             value={{
-                onClose: () => setOpen(false),
-                onOpen: () => setOpen(true),
+                onClose,
+                onOpen,
                 toggleTheme: () => setTheme(theme === 'light' ? 'dark' : 'light'),
                 setLastConnected: (e) => setLastConnected(e),
                 open,
@@ -62,10 +71,10 @@ export const WalletKitProvider = ({
             >
                 <WalletKitValueProvider>
                     <ResponsiveModal
-                        onClose={() => setOpen(false)}
+                        onClose={onClose}
                         open={open}
                         dialogSize="lg"
-                        onOpenChange={() => setOpen(true)}
+                        onOpenChange={onOpen}
                     >
                         <MainScreen />
                     </ResponsiveModal>
