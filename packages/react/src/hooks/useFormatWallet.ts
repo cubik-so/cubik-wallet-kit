@@ -34,7 +34,7 @@ export const useFormattedWallet = () => {
         const walletAdapters = Object.keys(allWalletAdapters)
             .filter((key) => key.includes('Adapter'))
             .map((key) => (allWalletAdapters as any)[key])
-            .map((WalletAdapter: any) => new WalletAdapter()) // Intentional any, TS were being annoying
+            .map((walletAdapter: any) => new walletAdapter()) // Intentional any, TS were being annoying
 
         const walletConnectWalletAdapter: WalletAdapterWithMutableSupportedTransactionVersions<BaseSignerWalletAdapter> | null =
             (() => {

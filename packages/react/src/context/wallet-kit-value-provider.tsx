@@ -1,7 +1,7 @@
-import { DEFAULT_CONTEXT } from 'core'
 import React, { useMemo } from 'react'
-import type { WalletKitValueState } from 'core'
 import { useWallet } from '@solana/wallet-adapter-react'
+import { DEFAULT_CONTEXT } from '@/utils/default'
+import type { WalletKitValueState } from '@/utils/default'
 
 interface Props {
     children: React.ReactNode

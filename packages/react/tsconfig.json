@@ -2,12 +2,15 @@
     "extends": "@cubik-wallet/configs/tsconfig/index.json",
     "compilerOptions": {
         "jsx": "react-jsx",
-        "baseUrl": "./src",
         "module": "esnext",
         "moduleResolution": "bundler",
         "paths": {
             "@/*": ["./src/*"],
-            "@/lib/*": ["./src/lib/*"]
+            "@/lib/*": ["./src/lib/*"],
+            "@/context/*": ["./src/context/*"],
+            "@/hooks/*": ["./src/hooks/*"],
+            "@/components/*": ["./src/components/*"],
+            "@/utils/*": ["./src/utils/*"]
         }
     }
 }

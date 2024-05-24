@@ -31,7 +31,6 @@
         "@solana/web3.js": "^1.91.4",
         "@squaress/ui": "^0.0.37",
         "@tiplink/wallet-adapter": "^2.1.13",
-        "core": "workspace:*",
         "framer-motion": "^10.18.0",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
