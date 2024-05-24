@@ -2,7 +2,6 @@ import { useMemo } from 'react'
 import { MoongateWalletAdapter } from '@moongate/moongate-adapter'
 import { WalletAdapterNetwork } from '@solana/wallet-adapter-base'
 import { CoinbaseWalletAdapter } from '@solana/wallet-adapter-coinbase'
-import { GlowWalletAdapter } from '@solana/wallet-adapter-glow'
 import { KeystoneWalletAdapter } from '@solana/wallet-adapter-keystone'
 import { LedgerWalletAdapter } from '@solana/wallet-adapter-ledger'
 import { NightlyWalletAdapter } from '@solana/wallet-adapter-nightly'
@@ -23,7 +22,6 @@ export const useFormattedWallet = () => {
     const wallets: WalletAdapter[] = useMemo(() => {
         const allWalletAdapters = {
             SolflareWalletAdapter,
-            GlowWalletAdapter,
             PhantomWalletAdapter,
             LedgerWalletAdapter,
             CoinbaseWalletAdapter,
