@@ -2,8 +2,8 @@
 
 import { Button } from '@squaress/ui/button'
 import { Text } from '@squaress/ui/text'
-import { useWalletKitContext } from '@wallet-kit/react/src/context/wallet-kit-provider'
-import { useWalletKit } from '@wallet-kit/react/src/context/wallet-kit-value-provider'
+import { useWalletKitContext } from '@wallet-kit/react'
+import { useWalletKit } from '@wallet-kit/react'
 
 export default function Home() {
     const { onOpen, open, onClose } = useWalletKitContext()

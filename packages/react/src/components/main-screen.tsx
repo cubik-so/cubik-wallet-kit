@@ -1,8 +1,7 @@
 import { useWalletKit } from '../context/wallet-kit-value-provider'
-import ConfirmWallet from './confirm-wallet'
+import { useWalletKitContext } from '../utils/provider'
 import RequestingConnection from './requesting-connection'
 import WalletOptions from './wallet-options'
-import { useWalletKitContext } from '../context/wallet-kit-provider'
 import ConnectionFailed from './connection-failed'
 
 export const MainScreen = () => {

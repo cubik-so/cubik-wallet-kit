@@ -1,12 +1,12 @@
 import Icon from '@squaress/ui/icons'
 import React, { useState } from 'react'
 import { useMediaQuery } from 'usehooks-ts'
-import { useWallet } from '@solana/wallet-adapter-react'
 import { useWalletKit } from '../context/wallet-kit-value-provider'
 import { Divider, Text } from '../lib/ui'
-import { AnimatePresence, MotionButton, MotionDiv, motion } from '../lib/framer'
+import { AnimatePresence, MotionDiv, motion } from '../lib/framer'
 import { useFormattedWallet } from '../hooks/useFormatWallet'
 import { useHandleConnect } from '../hooks/handle-connect'
+
 import { WalletIcon } from './wallet-icon'
 import type { WalletAdapter } from '@solana/wallet-adapter-base'
 

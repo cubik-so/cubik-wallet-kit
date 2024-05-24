@@ -1,9 +1,6 @@
-import React from 'react'
-import { useWallet } from '@solana/wallet-adapter-react'
 import { Button, EmptyState } from '../lib/ui'
-import { useWalletKit } from '../context/wallet-kit-value-provider'
 import { useHandleConnect } from '../hooks/handle-connect'
-import { useWalletKitContext } from '../context/wallet-kit-provider'
+import { useWalletKitContext } from '../utils/provider'
 
 const ConnectionFailed = () => {
     const { lastConnected } = useWalletKitContext()

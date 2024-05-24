@@ -1,8 +1,8 @@
 import { useCallback, useEffect } from 'react'
 import { WalletReadyState } from '@solana/wallet-adapter-base'
 import { useWalletKit } from '../context/wallet-kit-value-provider'
+import { useWalletKitContext } from '../utils/provider'
 import type { Adapter } from '@solana/wallet-adapter-base'
-import { useWalletKitContext } from '../context/wallet-kit-provider'
 
 export const useHandleConnect = () => {
     const { autoConnect, connect, wallet, select } = useWalletKit()
