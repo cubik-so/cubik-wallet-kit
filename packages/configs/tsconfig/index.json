@@ -12,6 +12,7 @@
         "isolatedModules": true,
         "lib": ["DOM", "DOM.Iterable", "ES2022"],
         "module": "NodeNext",
+        "moduleResolution": "node",
         "noEmit": true,
         "noImplicitReturns": true,
         "noUncheckedIndexedAccess": true,
