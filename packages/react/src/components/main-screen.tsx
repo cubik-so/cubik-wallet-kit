@@ -3,6 +3,7 @@ import ConfirmWallet from './confirm-wallet'
 import RequestingConnection from './requesting-connection'
 import WalletOptions from './wallet-options'
 import { useWalletKitContext } from '../context/wallet-kit-provider'
+import ConnectionFailed from './connection-failed'
 
 export const MainScreen = () => {
     const { connected, connecting, disconnecting } = useWalletKit()
@@ -16,9 +17,8 @@ export const MainScreen = () => {
         return <RequestingConnection />
     }
 
-    return (
-        <>
-            <RequestingConnection />
-        </>
-    )
+    if (error) {
+        return <ConnectionFailed />
+    }
+    return <>working</>
 }

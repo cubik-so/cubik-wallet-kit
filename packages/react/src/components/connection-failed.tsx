@@ -1,7 +1,13 @@
 import React from 'react'
-import { Button, EmptyState } from 'lib/ui'
+import { Button, EmptyState } from '../lib/ui'
+import { useWalletKit } from '../context/wallet-kit-value-provider'
+import { useHandleConnect } from '../hooks/handle-connect'
+import { useWallet } from '@solana/wallet-adapter-react'
+import { useWalletKitContext } from '../context/wallet-kit-provider'
 
 const ConnectionFailed = () => {
+    const { lastConnected } = useWalletKitContext()
+    const { handleConnectClick } = useHandleConnect()
     return (
         <EmptyState
             title={'Connection Failed'}
@@ -14,8 +20,9 @@ const ConnectionFailed = () => {
                 //can add onclick and isLoading
                 className="w-full md:w-fit"
                 variant="primary"
+                onClick={(e) => lastConnected && handleConnectClick(e, lastConnected)}
             >
-                Retry
+                Retry {lastConnected?.name || 'NA'}
             </Button>
             <Button
                 //can add onclick and isLoading

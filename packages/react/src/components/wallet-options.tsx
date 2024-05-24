@@ -5,6 +5,9 @@ import { useWalletKit } from '../context/wallet-kit-value-provider'
 import { Divider, Text } from '../lib/ui'
 import { AnimatePresence, MotionButton, MotionDiv, motion } from '../lib/framer'
 import { useWallet } from '@solana/wallet-adapter-react'
+import { useFormattedWallet } from '../hooks/useFormatWallet'
+import { WalletIcon } from './wallet-icon'
+import { useHandleConnect } from '../hooks/handle-connect'
 
 const FooterComponent = ({ text, icon }: { icon: string; text: string }) => {
     return (
@@ -27,10 +30,11 @@ const FooterComponent = ({ text, icon }: { icon: string; text: string }) => {
 
 const WalletOptions = () => {
     const { wallet } = useWalletKit()
-    const { wallets } = useWallet()
+    const wallets = useFormattedWallet()
+    console.log(wallets)
     const isMobileDevice = useMediaQuery('(max-width: 640px)')
     const [showMore, setShowMore] = useState<boolean>(false)
-
+    const { handleConnectClick } = useHandleConnect()
     return (
         <MotionDiv layout className="rounded-xl bg-[var(--modal-body-surface)] overflow-hidden">
             {/* Header */}
@@ -76,7 +80,18 @@ const WalletOptions = () => {
                 >
                     {wallets &&
                         wallets.map((e) => {
-                            return <>{e.adapter.name}</>
+                            return (
+                                <div
+                                    // layoutId={adapter.name}
+                                    key={e.name}
+                                    className="cursor-pointer pointer-events-auto"
+                                    onClick={(event: React.MouseEvent<HTMLElement, MouseEvent>) => {
+                                        handleConnectClick(event, e)
+                                    }}
+                                >
+                                    <WalletIcon wallet={e} />
+                                </div>
+                            )
                         })}
                 </motion.div>
             </AnimatePresence>

@@ -9,7 +9,7 @@ import { ResponsiveModal } from '../lib/ui'
 import { WalletKitValueProvider } from './wallet-kit-value-provider'
 import type { WalletKitContextState } from 'core'
 import type { WalletKitConfig } from '../config'
-import type { Adapter, WalletError } from '@solana/wallet-adapter-base'
+import type { Adapter, WalletAdapter, WalletError } from '@solana/wallet-adapter-base'
 
 export const WalletKitContext = React.createContext<WalletKitContextState>(
     WALLET_KIT_DEFAULT_CONTEXT as WalletKitContextState,
@@ -37,13 +37,19 @@ export const WalletKitProvider = ({
     const [open, setOpen] = useState<boolean>(false)
     const defaultWallets = [new SolflareWalletAdapter(), new PhantomWalletAdapter()] as any
     const [error, setError] = useState<WalletError | null>(null)
+    const [theme, setTheme] = useState<'light' | 'dark'>('light')
+    const [lastConnected, setLastConnected] = useState<WalletAdapter | null>(null)
     return (
         <WalletKitContext.Provider
             value={{
                 onClose: () => setOpen(false),
                 onOpen: () => setOpen(true),
-                open: open,
-                error: error,
+                toggleTheme: () => setTheme(theme === 'light' ? 'dark' : 'light'),
+                setLastConnected: (e) => setLastConnected(e),
+                open,
+                error,
+                theme,
+                lastConnected,
             }}
         >
             <WalletProvider

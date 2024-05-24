@@ -3,6 +3,7 @@ import type {
     MessageSignerWalletAdapterProps,
     SignerWalletAdapterProps,
     SignInMessageSignerWalletAdapterProps,
+    WalletAdapter,
     WalletAdapterProps,
     WalletName,
     WalletReadyState,
@@ -20,6 +21,10 @@ export interface WalletKitContextState {
     onClose: () => void
     open: boolean
     error: Error | null
+    theme: 'light' | 'dark'
+    toggleTheme: () => void
+    lastConnected: WalletAdapter | null
+    setLastConnected: (adapter: WalletAdapter) => void
 }
 
 export const WALLET_KIT_DEFAULT_CONTEXT: Partial<WalletKitContextState> = {
@@ -31,6 +36,14 @@ export const WALLET_KIT_DEFAULT_CONTEXT: Partial<WalletKitContextState> = {
     },
     open: false,
     error: null,
+    theme: 'light',
+    lastConnected: null,
+    setLastConnected: (adapter: WalletAdapter) => {
+        return adapter
+    },
+    toggleTheme: () => {
+        return null
+    },
 }
 
 // Handles the value for the connected adapter
