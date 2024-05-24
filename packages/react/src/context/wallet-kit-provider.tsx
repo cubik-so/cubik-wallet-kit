@@ -2,12 +2,12 @@
 import { PhantomWalletAdapter } from '@solana/wallet-adapter-phantom'
 import { WalletProvider } from '@solana/wallet-adapter-react'
 import { SolflareWalletAdapter } from '@solana/wallet-adapter-solflare'
-import { WALLET_KIT_DEFAULT_CONTEXT } from '@/utils/default'
 import React, { useState } from 'react'
+import { WALLET_KIT_DEFAULT_CONTEXT } from '../utils/default'
 import { MainScreen } from '../components/main-screen'
 import { ResponsiveModal } from '../lib/ui'
 import { WalletKitValueProvider } from './wallet-kit-value-provider'
-import type { WalletKitContextState } from '@/utils/default'
+import type { WalletKitContextState } from '../utils/default'
 import type { WalletKitConfig } from '../config'
 import type { Adapter, WalletAdapter, WalletError } from '@solana/wallet-adapter-base'
 
@@ -64,7 +64,7 @@ export const WalletKitProvider = ({
                     <ResponsiveModal
                         onClose={() => setOpen(false)}
                         open={open}
-                        dialogSize="md"
+                        dialogSize="lg"
                         onOpenChange={() => setOpen(true)}
                     >
                         <MainScreen />
