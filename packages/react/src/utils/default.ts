@@ -5,6 +5,7 @@ import type {
     SignInMessageSignerWalletAdapterProps,
     WalletAdapter,
     WalletAdapterProps,
+    WalletError,
     WalletName,
     WalletReadyState,
 } from '@solana/wallet-adapter-base'
@@ -21,6 +22,7 @@ export interface WalletKitContextState {
     onClose: () => void
     open: boolean
     error: Error | null
+    setError: (error: WalletError | null) => void
     theme: 'light' | 'dark'
     toggleTheme: () => void
     lastConnected: WalletAdapter | null
@@ -36,6 +38,9 @@ export const WALLET_KIT_DEFAULT_CONTEXT: Partial<WalletKitContextState> = {
     },
     open: false,
     error: null,
+    setError: () => {
+        return null
+    },
     theme: 'light',
     lastConnected: null,
     setLastConnected: (adapter: WalletAdapter) => {

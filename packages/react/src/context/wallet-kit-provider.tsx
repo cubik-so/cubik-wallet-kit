@@ -40,6 +40,7 @@ export const WalletKitProvider = ({ config, children }: WalletKitProviderProps) 
                 error,
                 theme,
                 lastConnected,
+                setError: (e) => setError(e),
             }}
         >
             <WalletProvider
