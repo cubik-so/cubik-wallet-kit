@@ -19,5 +19,5 @@ export const MainScreen = () => {
     if (error) {
         return <ConnectionFailed />
     }
-    return <>working</>
+    return <></>
 }
