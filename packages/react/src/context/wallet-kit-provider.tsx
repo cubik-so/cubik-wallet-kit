@@ -1,6 +1,6 @@
-/* eslint-disable no-nested-ternary */
 import { WalletProvider } from '@solana/wallet-adapter-react'
 import React, { useState } from 'react'
+import { AnimatePresence, MotionDiv } from '../lib/framer'
 import { ModalWallet } from '../components'
 import { WalletKitContext } from '../utils/provider'
 import { WalletKitValueProvider } from './wallet-kit-value-provider'
@@ -52,6 +52,31 @@ export const WalletKitProvider = ({ config, children }: WalletKitProviderProps) 
             >
                 <WalletKitValueProvider>
                     <ModalWallet onClose={onClose} onOpen={onOpen} open={open} />
+                    <MotionDiv
+                        layout
+                        // key={key}
+                        style={{
+                            // width: isMobileDevice ? '100%' : '400px',
+                            maxWidth: '100vw',
+                        }}
+                    >
+                        <div className="w-full bg-[var(--modal-body-surface)] rounded-xl px-6 py-10 pb-6 flex flex-col items-center justify-center gap-6 md:gap-8">
+                            <AnimatePresence mode="wait">
+                                <MotionDiv
+                                    layout
+                                    // animate on acitveslide change
+
+                                    initial={{ opacity: 0, scale: 0.95 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    exit={{ opacity: 0, scale: 0.95 }}
+                                    transition={{ duration: 0.2 }}
+                                    className="flex flex-col justify-center items-center text-center w-full max-w-[330px] gap-2"
+                                >
+                                    {children}
+                                </MotionDiv>
+                            </AnimatePresence>
+                        </div>
+                    </MotionDiv>
                     {children}
                 </WalletKitValueProvider>
             </WalletProvider>
