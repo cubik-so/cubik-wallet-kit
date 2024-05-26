@@ -16,7 +16,7 @@ export const ModalWallet = ({ open, onClose, onOpen }: Props) => {
         }
     }, [connected, open])
     return (
-        <ResponsiveModal onClose={onClose} open={open} dialogSize="lg" onOpenChange={onOpen}>
+        <ResponsiveModal onClose={onClose} open={open} dialogSize="md" onOpenChange={onOpen}>
             <MainScreen />
         </ResponsiveModal>
     )

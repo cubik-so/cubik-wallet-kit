@@ -8,7 +8,9 @@ const RequestingConnection = () => {
     const { lastConnected } = useWalletKitContext()
     return (
         <>
-            <div className={`mx-auto w-fit rounded-full flex flex-col gap-4 items-center`}>
+            <div
+                className={`mx-auto w-fit rounded-full flex flex-col gap-4 items-center max-w-[280px] md:max-w-[360px] py-10 md:py-16`}
+            >
                 <Avatar
                     src={lastConnected?.icon as string}
                     alt={'wallet adapter'}
@@ -26,7 +28,7 @@ const RequestingConnection = () => {
                 </div>
 
                 <div className=" w-full flex items-center gap-2 flex-col">
-                    <Button variant="secondary" isLoading={true}>
+                    <Button variant="secondary" isLoading={true} className="w-full">
                         asdf
                     </Button>
                     {/* <Button
