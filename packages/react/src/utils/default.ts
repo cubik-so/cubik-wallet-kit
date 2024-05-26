@@ -1,8 +1,8 @@
 import type {
     Adapter,
     MessageSignerWalletAdapterProps,
-    SignerWalletAdapterProps,
     SignInMessageSignerWalletAdapterProps,
+    SignerWalletAdapterProps,
     WalletAdapter,
     WalletAdapterProps,
     WalletError,
@@ -72,7 +72,7 @@ export interface WalletKitValueState {
     sendTransaction: WalletAdapterProps['sendTransaction']
     signTransaction: SignerWalletAdapterProps['signTransaction'] | undefined
     signAllTransactions: SignerWalletAdapterProps['signAllTransactions'] | undefined
-    signMessage: MessageSignerWalletAdapterProps['signMessage'] | undefined
+    signMessage: MessageSignerWalletAdapterProps['signMessage']
     signIn: SignInMessageSignerWalletAdapterProps['signIn'] | undefined
 }
 

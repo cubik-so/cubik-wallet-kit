@@ -5,6 +5,7 @@ import { MotionDiv } from '../lib/framer'
 import RequestingConnection from './requesting-connection'
 import WalletOptions from './wallet-options'
 import ConnectionFailed from './connection-failed'
+import SignWallet from './sign-wallet'
 
 export const MainScreen = () => {
     const { connected, connecting, disconnecting } = useWalletKit()
@@ -46,12 +47,13 @@ export const MainScreen = () => {
         )
     }
 
-    if (withSignIn) {
+    if (connected && withSignIn) {
         return (
             <>
                 {/*
           sign in state
             */}
+                <SignWallet />
             </>
         )
     }

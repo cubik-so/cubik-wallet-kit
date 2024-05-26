@@ -11,6 +11,7 @@
     "devDependencies": {
         "@cubik-wallet/configs": "workspace:*",
         "@types/node": "^20.11.30",
+        "@coral-xyz/anchor": "^0.27.0",
         "prettier": "^3.2.5",
         "turbo": "latest",
         "typescript": "^5.4.3"

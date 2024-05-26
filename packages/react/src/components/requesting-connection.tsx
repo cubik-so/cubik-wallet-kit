@@ -1,7 +1,6 @@
 import React from 'react'
 import { Avatar } from '@squaress/ui/avatar'
-import Icon from '@squaress/ui/icons'
-import { Button, EmptyState, Text } from '../lib/ui'
+import { Button, Text } from '../lib/ui'
 import { useWalletKitContext } from '../utils/provider'
 
 const RequestingConnection = () => {
@@ -28,46 +27,19 @@ const RequestingConnection = () => {
                 </div>
 
                 <div className=" w-full flex items-center gap-2 flex-col">
-                    <Button variant="secondary" isLoading={true} className="w-full">
-                        asdf
-                    </Button>
-                    {/* <Button
-                        className="w-full"
-                        size="xl"
+                    <Button
                         variant="secondary"
                         isLoading={true}
+                        className="w-full"
                         loadingText="Connecting"
-                        // onClick={() => {}}
-                    >
-                       
-                    </Button> */}
+                    ></Button>
+
                     <Button onClick={() => {}} size="md" variant="tertiary">
                         Connect another wallet
                     </Button>
-                    {/* ) : (
-                        ''
-                      )}
-                    </AnimatePresence> */}
                 </div>
             </div>
         </>
-        // <EmptyState
-        //     title={'Requesting Connetion...'}
-        //     description={
-        //         'Click on the connect wallet button in the wallet popup or open the wallet'
-        //     }
-        //     icon={'wallet-plus-duo-solid'}
-        //     iconColor="var(--color-fg-info-base)"
-        //     bgColor="var(--color-surface-info-transparent)"
-        // >
-        //     <Button
-        //         //can add onclick and isLoading
-        //         className="w-full md:w-fit"
-        //         variant="primary"
-        //     >
-        //         Loading
-        //     </Button>
-        // </EmptyState>
     )
 }
 

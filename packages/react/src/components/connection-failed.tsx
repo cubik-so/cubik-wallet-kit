@@ -11,7 +11,7 @@ const ConnectionFailed = () => {
         <EmptyState
             title={'Connection Failed'}
             description={
-                'Connecting to wallet failed. Try again or go back to try with a new wallet.'
+                'You have rejected the connection request or it has failed due to some reason. Please try again!'
             }
             icon={'danger-skull-duo-solid'}
         >
@@ -21,6 +21,8 @@ const ConnectionFailed = () => {
                 variant="primary"
                 isLoading={connecting}
                 onClick={(e) => lastConnected && handleConnectClick(e, lastConnected)}
+                leftIconName="rotate-right"
+                loadingText="Connecting"
             >
                 Retry
             </Button>
