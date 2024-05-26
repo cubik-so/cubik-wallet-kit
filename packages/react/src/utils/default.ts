@@ -28,6 +28,7 @@ export interface WalletKitContextState {
     toggleTheme: () => void
     lastConnected: WalletAdapter | null
     setLastConnected: (adapter: WalletAdapter) => void
+    messageToSign?: string
 }
 
 export const WALLET_KIT_DEFAULT_CONTEXT: Partial<WalletKitContextState> = {
@@ -43,6 +44,7 @@ export const WALLET_KIT_DEFAULT_CONTEXT: Partial<WalletKitContextState> = {
     setError: () => {
         return null
     },
+    messageToSign: undefined,
     theme: 'light',
     lastConnected: null,
     setLastConnected: (adapter: WalletAdapter) => {

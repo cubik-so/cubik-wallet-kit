@@ -4,4 +4,5 @@ export type WalletKitConfig = {
     env: Cluster
     autoConnect: boolean
     withSignIn: boolean
+    messageToSign?: string
 }

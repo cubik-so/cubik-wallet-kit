@@ -46,6 +46,7 @@ export const WalletKitProvider = ({ config, children }: WalletKitProviderProps) 
                 lastConnected,
                 setError: (e) => setError(e),
                 withSignIn: config.withSignIn,
+                messageToSign: config.messageToSign,
             }}
         >
             <WalletProvider
