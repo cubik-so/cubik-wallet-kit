@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { ResponsiveModal } from '@squaress/ui/responsive-modal'
 import { MainScreen } from '../components/main-screen'
 import { useWalletKit } from '../context/wallet-kit-value-provider'
+import { useWalletKitContext } from '../utils/provider'
 
 interface Props {
     open: boolean
@@ -10,8 +11,9 @@ interface Props {
 }
 export const ModalWallet = ({ open, onClose, onOpen }: Props) => {
     const { connected } = useWalletKit()
+    const { withSignIn } = useWalletKitContext()
     useEffect(() => {
-        if (connected && open) {
+        if (connected && open && !withSignIn) {
             onClose()
         }
     }, [connected, open])

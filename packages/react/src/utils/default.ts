@@ -21,6 +21,7 @@ export interface WalletKitContextState {
     onOpen: () => void
     onClose: () => void
     open: boolean
+    withSignIn: boolean
     error: Error | null
     setError: (error: WalletError | null) => void
     theme: 'light' | 'dark'
@@ -37,6 +38,7 @@ export const WALLET_KIT_DEFAULT_CONTEXT: Partial<WalletKitContextState> = {
         return Promise.reject(logMissingProviderError('call', 'onOpen'))
     },
     open: false,
+    withSignIn: false,
     error: null,
     setError: () => {
         return null

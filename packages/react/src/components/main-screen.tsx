@@ -9,7 +9,7 @@ import ConnectionFailed from './connection-failed'
 export const MainScreen = () => {
     const { connected, connecting, disconnecting } = useWalletKit()
 
-    const { error } = useWalletKitContext()
+    const { error, withSignIn } = useWalletKitContext()
 
     if (!connected && !connecting && !disconnecting && !error) {
         return <WalletOptions />
@@ -45,5 +45,16 @@ export const MainScreen = () => {
             </MotionDiv>
         )
     }
+
+    if (withSignIn) {
+        return (
+            <>
+                {/*
+          sign in state
+            */}
+            </>
+        )
+    }
+
     return <></>
 }

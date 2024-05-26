@@ -21,6 +21,7 @@ export default function RootLayout({
                             config={{
                                 autoConnect: true,
                                 env: 'mainnet-beta',
+                                withSignIn: true,
                             }}
                         >
                             {children}
