@@ -2,21 +2,14 @@ import { useState } from 'react'
 import { utils } from '@coral-xyz/anchor'
 import { toast } from '@squaress/ui/toast'
 import { Button, EmptyState } from '../lib/ui'
-import { createMessage } from '../utils/createMessage'
 import { useWalletKit } from '../context/wallet-kit-value-provider'
 import { useWalletKitContext } from '../utils/provider'
-
-export const generateSession = async (nonce: string) => {
-    const hash = nonce + process.env.SECRET?.slice(0, 10)
-    const final = utils.sha256.hash(hash)
-    return final
-}
 
 const SignWallet = () => {
     const [signing, setSigning] = useState(false)
     const [signError, setSignError] = useState(false)
     const { signMessage, connected } = useWalletKit()
-    const { onClose, setError } = useWalletKitContext()
+    const { onClose, setError, messageToSign, onSignInMessage } = useWalletKitContext()
 
     const verifySignature = async () => {
         setSigning(true)
@@ -24,16 +17,12 @@ const SignWallet = () => {
             throw new Error('Sign message is undefined')
         }
         try {
-            const nonce = Math.random().toString(36).substring(2, 15)
-            const message = await generateSession(nonce)
-            const msg = createMessage(message)
-            if (!msg) {
-                throw new Error('Message is undefined')
-            }
-            const sigBuffer = await signMessage(msg)
+            const data = new TextEncoder().encode(messageToSign)
+
+            const sigBuffer = await signMessage(data)
             const signature = utils.bytes.bs58.encode(sigBuffer)
-            console.log('signature', signature)
             if (signature) {
+                onSignInMessage(signature)
                 setSigning(false)
                 onClose()
             }

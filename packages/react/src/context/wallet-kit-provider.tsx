@@ -11,11 +11,15 @@ import type { WalletAdapter, WalletError } from '@solana/wallet-adapter-base'
 interface WalletKitProviderProps {
     config: WalletKitConfig // Configuration options for the wallet provider.
     children: React.ReactNode // Children components that will have access to the wallet context.
-    onSignInMessage: (message: string) => void
+    onSignInMessage: (sig: string) => void
 }
 
 // Component to provide wallet connections to the application.
-export const WalletKitProvider = ({ config, children }: WalletKitProviderProps) => {
+export const WalletKitProvider = ({
+    config,
+    children,
+    onSignInMessage,
+}: WalletKitProviderProps) => {
     const [open, setOpen] = useState<boolean>(false)
 
     const [error, setError] = useState<WalletError | null>(null)
@@ -36,6 +40,7 @@ export const WalletKitProvider = ({ config, children }: WalletKitProviderProps) 
     return (
         <WalletKitContext.Provider
             value={{
+                onSignInMessage,
                 onClose,
                 onOpen,
                 toggleTheme: () => setTheme(theme === 'light' ? 'dark' : 'light'),

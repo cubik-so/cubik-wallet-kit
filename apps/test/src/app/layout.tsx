@@ -22,6 +22,10 @@ export default function RootLayout({
                                 autoConnect: true,
                                 env: 'mainnet-beta',
                                 withSignIn: true,
+                                messageToSign: `Welcome to Cubik\n The genesis for leading Solana Initiatives\n By signing this message you agree to the teams and conditions 🌱`,
+                            }}
+                            onSignInMessage={(e) => {
+                                alert(e)
                             }}
                         >
                             {children}
