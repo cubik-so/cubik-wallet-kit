@@ -17,7 +17,7 @@ const SignWallet = () => {
             throw new Error('Sign message is undefined')
         }
         try {
-            const data = new TextEncoder().encode(messageToSign)
+            const data = new TextEncoder().encode(messageToSign || '')
 
             const sigBuffer = await signMessage(data)
             const signature = utils.bytes.bs58.encode(sigBuffer)

@@ -5,6 +5,10 @@
     "main": "./src/index.ts",
     "type": "module",
     "scripts": {
+        "publish": "pnpm publish --no-git-checks",
+        "build": "pnpm run clean && tsup --dts",
+        "dev": "tsup --watch",
+        "clean": "rimraf dist .turbo",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "keywords": [],
@@ -33,6 +37,8 @@
         "framer-motion": "^10.18.0",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
+        "rimraf": "^5.0.7",
+        "tsup": "^8.0.2",
         "usehooks-ts": "^3.1.0",
         "wallet-adapter-phantom": "link:@@solana/wallet-adapter-phantom"
     }
