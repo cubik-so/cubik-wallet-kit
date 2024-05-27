@@ -32,7 +32,7 @@ export const MainScreen = () => {
         )
     }
 
-    if (error) {
+    if (error && !connected) {
         return (
             <MotionDiv
                 layout
