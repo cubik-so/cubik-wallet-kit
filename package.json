@@ -1,5 +1,5 @@
 {
-    "name": "cubik-wallet-kit",
+    "name": "@wallet-kit/react",
     "private": true,
     "scripts": {
         "publish": "dotenv -- turbo run publish",

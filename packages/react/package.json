@@ -5,7 +5,7 @@
     "main": "./src/index.ts",
     "type": "module",
     "scripts": {
-        "publish": "pnpm publish --no-git-checks",
+        "publish": "pnpm publish --no-git-checks --access public",
         "build": "pnpm run clean && tsup --dts",
         "dev": "tsup --watch",
         "clean": "rimraf dist .turbo",
