@@ -2,6 +2,7 @@
     "name": "cubik-wallet-kit",
     "private": true,
     "scripts": {
+        "publish": "dotenv -- turbo run publish",
         "build": "NODE_ENV=production dotenv -- turbo run build",
         "dev": "NODE_ENV=development dotenv --  turbo run dev",
         "start": "NODE_ENV=production dotenv -- turbo run start",

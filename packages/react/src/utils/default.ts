@@ -1,6 +1,7 @@
 import type {
     Adapter,
     MessageSignerWalletAdapterProps,
+    SendTransactionOptions,
     SignInMessageSignerWalletAdapterProps,
     SignerWalletAdapterProps,
     WalletAdapter,
@@ -9,11 +10,22 @@ import type {
     WalletName,
     WalletReadyState,
 } from '@solana/wallet-adapter-base'
-import type { PublicKey } from '@solana/web3.js'
+import type { Connection, PublicKey, Transaction, VersionedTransaction } from '@solana/web3.js'
 
 export interface Wallet {
     adapter: Adapter
     readyState: WalletReadyState
+}
+
+function constructMissingProviderErrorMessage(action: string, valueName: string) {
+    return (
+        'You have tried to ' +
+        ` ${action} "${valueName}"` +
+        ' on a WalletContext without providing one.' +
+        ' Make sure to render a WalletProvider' +
+        ' as an ancestor of the component that uses ' +
+        'WalletContext'
+    )
 }
 
 // Handles the global State of wallet modal/drawer
@@ -34,10 +46,10 @@ export interface WalletKitContextState {
 
 export const WALLET_KIT_DEFAULT_CONTEXT: Partial<WalletKitContextState> = {
     onClose: () => {
-        return Promise.reject(logMissingProviderError('call', 'onClose'))
+        return Promise.reject(constructMissingProviderErrorMessage('call', 'onClose'))
     },
     onOpen: () => {
-        return Promise.reject(logMissingProviderError('call', 'onOpen'))
+        return Promise.reject(constructMissingProviderErrorMessage('call', 'onOpen'))
     },
     open: false,
     withSignIn: false,
@@ -80,42 +92,44 @@ export interface WalletKitValueState {
     signIn: SignInMessageSignerWalletAdapterProps['signIn'] | undefined
 }
 
-function logMissingProviderError(action: string, property: string) {
-    const error = new Error(
-        `You have tried to ${action} "${property}" on a WalletContext without providing one. ` +
-            'Make sure to render a WalletProvider as an ancestor of the component that uses WalletContext.',
-    )
-    console.error(error)
-    return error
-}
-
-export const DEFAULT_CONTEXT: Partial<WalletKitValueState> = {
+export const WALLETKIT_VALUE_DEFAULT_CONTEXT = {
     autoConnect: false,
     connecting: false,
     connected: false,
     disconnecting: false,
-    select() {
-        logMissingProviderError('call', 'select')
+    select(_name: WalletName | null) {
+        console.error(constructMissingProviderErrorMessage('get', 'select'))
     },
     connect() {
-        return Promise.reject(logMissingProviderError('call', 'connect'))
+        return Promise.reject(console.error(constructMissingProviderErrorMessage('get', 'connect')))
     },
     disconnect() {
-        return Promise.reject(logMissingProviderError('call', 'disconnect'))
+        return Promise.reject(
+            console.error(constructMissingProviderErrorMessage('get', 'disconnect')),
+        )
     },
-    sendTransaction() {
-        return Promise.reject(logMissingProviderError('call', 'sendTransaction'))
+    sendTransaction(
+        _transaction: VersionedTransaction | Transaction,
+        _connection: Connection,
+        _options?: SendTransactionOptions,
+    ) {
+        return Promise.reject(
+            console.error(constructMissingProviderErrorMessage('get', 'sendTransaction')),
+        )
     },
-    signTransaction() {
-        return Promise.reject(logMissingProviderError('call', 'signTransaction'))
+    signTransaction(_transaction: Transaction) {
+        return Promise.reject(
+            console.error(constructMissingProviderErrorMessage('get', 'signTransaction')),
+        )
     },
-    signAllTransactions() {
-        return Promise.reject(logMissingProviderError('call', 'signAllTransactions'))
+    signAllTransactions(_transaction: Transaction[]) {
+        return Promise.reject(
+            console.error(constructMissingProviderErrorMessage('get', 'signAllTransactions')),
+        )
     },
-    signMessage() {
-        return Promise.reject(logMissingProviderError('call', 'signMessage'))
+    signMessage(_message: Uint8Array) {
+        return Promise.reject(
+            console.error(constructMissingProviderErrorMessage('get', 'signMessage')),
+        )
     },
-    signIn() {
-        return Promise.reject(logMissingProviderError('call', 'signIn'))
-    },
-}
+} as WalletKitValueState
