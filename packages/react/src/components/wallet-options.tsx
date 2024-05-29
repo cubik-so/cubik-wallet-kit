@@ -7,9 +7,10 @@ import { useFormattedWallet } from '../hooks/useFormatWallet.js'
 import { useHandleConnect } from '../hooks/handle-connect.js'
 
 import { WalletIcon } from './wallet-icon.js'
+import type { ReactNode } from 'react'
 import type { WalletAdapter } from '@solana/wallet-adapter-base'
 
-const FooterComponent = ({ text, icon }: { icon: string; text: string }) => {
+const FooterComponent = ({ text, icon }: { icon: ReactNode; text: string }) => {
     return (
         <div className="flex item-start gap-2 space-x-3">
             <div className="min-w-[18px] md:pt-[3px]">
@@ -20,6 +21,7 @@ const FooterComponent = ({ text, icon }: { icon: string; text: string }) => {
                     height={18}
                     strokeWidth={1.5}
                 /> */}
+                {icon}
             </div>
             <Text className="l1-light md:l2-light" color="tertiary">
                 {text}
@@ -164,15 +166,63 @@ const WalletOptions = () => {
                                     text={
                                         'View only permissions. We will never do anything without your approval.'
                                     }
-                                    icon={'eye-open2'}
+                                    icon={
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="24"
+                                            height="24"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                        >
+                                            <path
+                                                d="M3 14C3 11.8125 5.7 7 12 7C18.3 7 21 11.8125 21 14M15 14C15 15.6569 13.6569 17 12 17C10.3431 17 9 15.6569 9 14C9 12.3431 10.3431 11 12 11C13.6569 11 15 12.3431 15 14Z"
+                                                stroke="black"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            />
+                                        </svg>
+                                    }
                                 />
                                 <FooterComponent
                                     text={'Transparent, audited and Open Source'}
-                                    icon={'shield-check'}
+                                    icon={
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="24"
+                                            height="24"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                        >
+                                            <path
+                                                d="M9.1334 12.0191L11.1401 14.0237C12.1242 12.303 13.499 10.8499 15.1334 9.73381M10.8837 2.36804L5.4961 4.31356C4.34691 4.72854 3.56421 5.799 3.51725 7.01992L3.39 10.3285C3.23232 14.4282 5.36929 18.2749 8.93337 20.3071L10.454 21.1741C11.3549 21.6878 12.4571 21.6998 13.3689 21.2059L14.8575 20.3995C18.6748 18.3318 20.9189 14.2123 20.586 9.88366L20.359 6.93316C20.2685 5.7566 19.4967 4.74238 18.3868 4.34159L12.9216 2.36804C12.2631 2.13025 11.5422 2.13025 10.8837 2.36804Z"
+                                                stroke="black"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            />
+                                        </svg>
+                                    }
                                 />
                                 <FooterComponent
                                     text={'Trusted by 2,500+ Users'}
-                                    icon={'user-love'}
+                                    icon={
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="24"
+                                            height="24"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                        >
+                                            <path
+                                                d="M10.4023 21H6C4.89543 21 4 20.1046 4 19C4 16.7909 5.79086 15 8 15H9.21484M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7ZM17 21.3193C16.6 21.3193 13 19.375 13 16.6528C13 15.2918 14.2 14.3196 15.4 14.3196C15.9896 14.3196 16.6 14.514 17 15.0973C17.4 14.514 18 14.3111 18.6 14.3196C19.8 14.3365 21 15.2918 21 16.6528C21 19.375 17.4 21.3193 17 21.3193Z"
+                                                stroke="black"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            />
+                                        </svg>
+                                    }
                                 />
                             </div>
                             <div />
