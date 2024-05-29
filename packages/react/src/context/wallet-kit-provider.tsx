@@ -1,10 +1,10 @@
 import { WalletProvider } from '@solana/wallet-adapter-react'
 import React, { useState } from 'react'
-import { AnimatePresence, MotionDiv } from '../lib/framer'
-import { ModalWallet } from '../components'
-import { WalletKitContext } from '../utils/provider'
-import { WalletKitValueProvider } from './wallet-kit-value-provider'
-import type { WalletKitConfig } from '../config'
+import { AnimatePresence, MotionDiv } from '../lib/framer.js'
+import { ModalWallet } from '../components/index.js'
+import { WalletKitContext } from '../utils/provider.js'
+import { WalletKitValueProvider } from './wallet-kit-value-provider.js'
+import type { WalletKitConfig } from '../config.js'
 import type { WalletAdapter, WalletError } from '@solana/wallet-adapter-base'
 
 // Define the props expected by the WalletKitProvider component.

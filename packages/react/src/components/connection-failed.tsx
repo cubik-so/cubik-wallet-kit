@@ -1,7 +1,7 @@
-import { Button, EmptyState } from '../lib/ui'
-import { useHandleConnect } from '../hooks/handle-connect'
-import { useWalletKitContext } from '../utils/provider'
-import { useWalletKit } from '../context/wallet-kit-value-provider'
+import { Button, EmptyState } from '../lib/ui/index.js'
+import { useHandleConnect } from '../hooks/handle-connect.js'
+import { useWalletKitContext } from '../utils/provider.js'
+import { useWalletKit } from '../context/wallet-kit-value-provider.js'
 
 const ConnectionFailed = () => {
     const { lastConnected, setError } = useWalletKitContext()

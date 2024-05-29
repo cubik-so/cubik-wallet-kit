@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { utils } from '@coral-xyz/anchor'
 import { toast } from '@squaress/ui/toast'
-import { Button, EmptyState } from '../lib/ui'
-import { useWalletKit } from '../context/wallet-kit-value-provider'
-import { useWalletKitContext } from '../utils/provider'
+import { Button, EmptyState } from '../lib/ui/index.js'
+import { useWalletKit } from '../context/wallet-kit-value-provider.js'
+import { useWalletKitContext } from '../utils/provider.js'
 
 const SignWallet = () => {
     const [signing, setSigning] = useState(false)

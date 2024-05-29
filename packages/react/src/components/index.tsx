@@ -1,8 +1,8 @@
 import { useEffect } from 'react'
 import { ResponsiveModal } from '@squaress/ui/responsive-modal'
-import { MainScreen } from '../components/main-screen'
-import { useWalletKit } from '../context/wallet-kit-value-provider'
-import { useWalletKitContext } from '../utils/provider'
+import { MainScreen } from '../components/main-screen.js'
+import { useWalletKit } from '../context/wallet-kit-value-provider.js'
+import { useWalletKitContext } from '../utils/provider.js'
 
 interface Props {
     open: boolean

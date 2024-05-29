@@ -1,5 +1,5 @@
 import { theme } from '@squaress/ui/theme'
-import type { Config } from 'tailwindcss'
+import { Config } from 'tailwindcss'
 
 const config: Config = {
     darkMode: 'class',

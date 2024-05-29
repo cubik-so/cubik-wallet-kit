@@ -1,11 +1,11 @@
-import { useWalletKit } from '../context/wallet-kit-value-provider'
-import { useWalletKitContext } from '../utils/provider'
-import { AnimatePresence } from '../lib/framer'
-import { MotionDiv } from '../lib/framer'
-import RequestingConnection from './requesting-connection'
-import WalletOptions from './wallet-options'
-import ConnectionFailed from './connection-failed'
-import SignWallet from './sign-wallet'
+import { useWalletKit } from '../context/wallet-kit-value-provider.js'
+import { useWalletKitContext } from '../utils/provider.js'
+import { AnimatePresence } from '../lib/framer.js'
+import { MotionDiv } from '../lib/framer.js'
+import RequestingConnection from './requesting-connection.js'
+import WalletOptions from './wallet-options.js'
+import ConnectionFailed from './connection-failed.js'
+import SignWallet from './sign-wallet.js'
 
 export const MainScreen = () => {
     const { connected, connecting, disconnecting } = useWalletKit()

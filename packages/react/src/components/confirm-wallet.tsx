@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, EmptyState } from 'lib/ui'
+import { Button, EmptyState } from '../lib/ui/index.js'
 
 const ConfirmWallet = () => {
     return (

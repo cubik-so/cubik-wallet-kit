@@ -1,13 +1,13 @@
 import Icon from '@squaress/ui/icons'
 import React, { useState } from 'react'
 import { useMediaQuery } from 'usehooks-ts'
-import { useWalletKit } from '../context/wallet-kit-value-provider'
-import { Divider, Text } from '../lib/ui'
-import { AnimatePresence, MotionDiv, motion } from '../lib/framer'
-import { useFormattedWallet } from '../hooks/useFormatWallet'
-import { useHandleConnect } from '../hooks/handle-connect'
+import { useWalletKit } from '../context/wallet-kit-value-provider.js'
+import { Divider, Text } from '../lib/ui/index.js'
+import { AnimatePresence, MotionDiv, motion } from '../lib/framer.js'
+import { useFormattedWallet } from '../hooks/useFormatWallet.js'
+import { useHandleConnect } from '../hooks/handle-connect.js'
 
-import { WalletIcon } from './wallet-icon'
+import { WalletIcon } from './wallet-icon.js'
 import type { WalletAdapter } from '@solana/wallet-adapter-base'
 
 const FooterComponent = ({ text, icon }: { icon: string; text: string }) => {

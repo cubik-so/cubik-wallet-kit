@@ -1,7 +1,7 @@
 import React from 'react'
 import { Avatar } from '@squaress/ui/avatar'
-import { Button, Text } from '../lib/ui'
-import { useWalletKitContext } from '../utils/provider'
+import { Button, Text } from '../lib/ui/index.js'
+import { useWalletKitContext } from '../utils/provider.js'
 
 const RequestingConnection = () => {
     const { lastConnected } = useWalletKitContext()

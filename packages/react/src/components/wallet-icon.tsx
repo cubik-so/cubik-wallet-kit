@@ -6,7 +6,7 @@ import { Avatar } from '@squaress/ui/avatar'
 import { useMediaQuery } from 'usehooks-ts'
 import { Spinner } from '@squaress/ui/spinner'
 import { Text } from '@squaress/ui/text'
-import { useWalletKitContext } from '../utils/provider'
+import { useWalletKitContext } from '../utils/provider.js'
 import type { Adapter, WalletName } from '@solana/wallet-adapter-base'
 import type { DetailedHTMLProps, ImgHTMLAttributes } from 'react'
 
