@@ -1,4 +1,3 @@
-import Icon from '@squaress/ui/icons'
 import React, { useState } from 'react'
 import { useMediaQuery } from 'usehooks-ts'
 import { useWalletKit } from '../context/wallet-kit-value-provider.js'
@@ -14,13 +13,13 @@ const FooterComponent = ({ text, icon }: { icon: string; text: string }) => {
     return (
         <div className="flex item-start gap-2 space-x-3">
             <div className="min-w-[18px] md:pt-[3px]">
-                <Icon
+                {/* <Icon
                     name={icon}
                     color="var(--color-fg-primary-subdued)"
                     width={18}
                     height={18}
                     strokeWidth={1.5}
-                />
+                /> */}
             </div>
             <Text className="l1-light md:l2-light" color="tertiary">
                 {text}
@@ -92,12 +91,12 @@ const WalletOptions = () => {
                         className="pointer-events-auto p-1 rounded-md"
                         // onClick={onClose}
                     >
-                        <Icon
+                        {/* <Icon
                             name="cross"
                             width={20}
                             color="var(--modal-header-cancel-icon)"
                             height={20}
-                        />
+                        /> */}
                     </motion.button>
                 </MotionDiv>
                 {/* Modal body */}

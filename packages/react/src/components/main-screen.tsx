@@ -50,9 +50,6 @@ export const MainScreen = () => {
     if (connected && withSignIn) {
         return (
             <>
-                {/*
-          sign in state
-            */}
                 <SignWallet />
             </>
         )
