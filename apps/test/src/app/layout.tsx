@@ -2,9 +2,9 @@
 
 import { WalletKitProvider } from '@wallet-kit/react'
 
-import './globals.css'
 import { SquaresProvider } from '@squaress/ui/provider'
 import { ThemeProvider } from '@squaress/ui/useTheme'
+import './globals.css'
 import '@squaress/ui/styles.css'
 
 export default function RootLayout({

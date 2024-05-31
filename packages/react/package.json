@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
     "name": "@wallet-kit/react",
     "version": "1.0.5",
     "description": "",
@@ -48,5 +49,55 @@
         "tsup": "^8.0.2",
         "usehooks-ts": "^3.1.0",
         "wallet-adapter-phantom": "link:@@solana/wallet-adapter-phantom"
+=======
+  "name": "@wallet-kit/react",
+  "version": "1.1.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "publish": "pnpm publish --no-git-checks --access public",
+    "build": "pnpm run clean && tsup --dts",
+    "dev": "tsup --watch",
+    "clean": "rimraf dist .turbo",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+>>>>>>> 47aad8e (fix: build)
     }
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.30",
+    "@types/react": "^18.2.74",
+    "@types/react-dom": "^18.2.24",
+    "typescript": "^5.4.3"
+  },
+  "dependencies": {
+    "@moongate/moongate-adapter": "^0.2.4",
+    "@solana/wallet-adapter-base": "^0.9.23",
+    "@solana/wallet-adapter-coinbase": "^0.1.19",
+    "@solana/wallet-adapter-keystone": "^0.1.15",
+    "@solana/wallet-adapter-ledger": "^0.9.25",
+    "@solana/wallet-adapter-nightly": "^0.1.16",
+    "@solana/wallet-adapter-phantom": "^0.9.24",
+    "@solana/wallet-adapter-react": "^0.15.35",
+    "@solana/wallet-adapter-solflare": "^0.6.28",
+    "@solana/wallet-adapter-walletconnect": "^0.1.16",
+    "@solana/web3.js": "^1.91.4",
+    "@squaress/ui": "^0.0.51",
+    "@tiplink/wallet-adapter": "^2.1.13",
+    "framer-motion": "^10.18.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rimraf": "^5.0.7",
+    "tsup": "^8.0.2",
+    "usehooks-ts": "^3.1.0",
+    "wallet-adapter-phantom": "link:@@solana/wallet-adapter-phantom"
+  }
 }

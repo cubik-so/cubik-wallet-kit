@@ -8,21 +8,33 @@ import { useWalletKitContext } from '../utils/provider.js'
 const SignWallet = () => {
     const [signing, setSigning] = useState(false)
     const [signError, setSignError] = useState(false)
-    const { signMessage, connected } = useWalletKit()
+    const { signMessage, connected, publicKey } = useWalletKit()
     const { onClose, setError, messageToSign, onSignInMessage } = useWalletKitContext()
 
     const verifySignature = async () => {
         setSigning(true)
-        if (!signMessage || !connected) {
+        if (!signMessage || !connected || !publicKey) {
             throw new Error('Sign message is undefined')
         }
         try {
-            const data = new TextEncoder().encode(messageToSign || '')
+            const timeStamp = Date.now()
+            const message =
+                messageToSign +
+                `
+              wallet:${publicKey?.toBase58()}
+              timestamp:${timeStamp}
+              `
+            const data = new TextEncoder().encode(message)
 
             const sigBuffer = await signMessage(data)
             const signature = utils.bytes.bs58.encode(sigBuffer)
             if (signature) {
-                onSignInMessage(signature)
+                onSignInMessage({
+                    sig: signature,
+                    timeStamp: timeStamp,
+                    wallet: publicKey?.toBase58(),
+                    message: message,
+                })
                 setSigning(false)
                 onClose()
             }

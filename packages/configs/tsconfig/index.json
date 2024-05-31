@@ -16,7 +16,8 @@
         "strict": true,
         "skipLibCheck": true,
         "resolveJsonModule": true,
-        "module": "ESNext",
+        "module": "NodeNext",
         "moduleResolution": "NodeNext"
-    }
+    },
+    "exclude": ["node_modules", "**/*.spec.ts", "**/*.test.ts", "sync-version.js"]
 }

@@ -6,12 +6,13 @@ import { WalletKitContext } from '../utils/provider.js'
 import { WalletKitValueProvider } from './wallet-kit-value-provider.js'
 import type { WalletKitConfig } from '../config.js'
 import type { WalletAdapter, WalletError } from '@solana/wallet-adapter-base'
+import type { WalletKitContextState } from '../utils/default.js'
 
 // Define the props expected by the WalletKitProvider component.
 interface WalletKitProviderProps {
     config: WalletKitConfig // Configuration options for the wallet provider.
     children: React.ReactNode // Children components that will have access to the wallet context.
-    onSignInMessage: (sig: string) => void
+    onSignInMessage: WalletKitContextState['onSignInMessage']
 }
 
 // Component to provide wallet connections to the application.
