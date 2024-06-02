@@ -25,9 +25,10 @@ const SignWallet = () => {
               timestamp:${timeStamp}
               `
             const data = new TextEncoder().encode(message)
-
             const sigBuffer = await signMessage(data)
+
             const signature = utils.bytes.bs58.encode(sigBuffer)
+
             if (signature) {
                 onSignInMessage({
                     sig: signature,

@@ -64,7 +64,6 @@ export const WalletKitProvider = ({
                 wallets={[]} // Pass formatted or original wallets array based on the formattedWallet prop.
             >
                 <WalletKitValueProvider>
-                    <ModalWallet onClose={onClose} onOpen={onOpen} open={open} />
                     <MotionDiv
                         layout
                         // key={key}
@@ -85,7 +84,7 @@ export const WalletKitProvider = ({
                                     transition={{ duration: 0.2 }}
                                     className="flex flex-col justify-center items-center text-center w-full max-w-[330px] gap-2"
                                 >
-                                    {children}
+                                    <ModalWallet onClose={onClose} onOpen={onOpen} open={open} />
                                 </MotionDiv>
                             </AnimatePresence>
                         </div>
