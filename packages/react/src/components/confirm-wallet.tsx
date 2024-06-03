@@ -12,7 +12,7 @@ const ConfirmWallet = () => {
         >
             <Button
                 //can add onclick and isLoading
-                className="w-full md:w-fit"
+                className="w-full"
                 variant="primary"
             >
                 Sign & Confirm

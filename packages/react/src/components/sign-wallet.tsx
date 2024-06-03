@@ -89,7 +89,7 @@ const SignWallet = () => {
         >
             <Button
                 //can add onclick and isLoading
-                className="w-full md:w-fit"
+                className="w-full"
                 variant="primary"
                 isLoading={signing}
                 onClick={verifySignature}
@@ -99,7 +99,7 @@ const SignWallet = () => {
             <Button
                 onClick={() => setError(null)}
                 //can add onclick and isLoading
-                className="w-full md:w-fit no-underline"
+                className="w-full no-underline"
                 variant="link"
             >
                 Go Back

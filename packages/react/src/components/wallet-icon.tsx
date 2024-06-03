@@ -139,10 +139,10 @@ export const WalletIcon = ({ wallet }: WalletIconProps) => {
                                     animate="animate"
                                     style={{
                                         zIndex: 1,
-                                        background:
-                                            theme === 'dark'
-                                                ? ''
-                                                : 'linear-gradient(to right, transparent 0%, rgba(255, 255, 255, 0.6) 50%, transparent 100%)',
+                                        // background:
+                                        //     theme === 'dark'
+                                        //         ? ''
+                                        //         : 'linear-gradient(to right, transparent 0%, rgba(255, 255, 255, 0.6) 50%, transparent 100%)',
                                     }}
                                 />
                             )}

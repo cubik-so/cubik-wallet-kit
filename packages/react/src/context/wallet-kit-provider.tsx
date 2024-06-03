@@ -72,7 +72,7 @@ export const WalletKitProvider = ({
                             maxWidth: '100vw',
                         }}
                     >
-                        <div className="w-full bg-[var(--modal-body-surface)] rounded-xl px-6 py-10 pb-6 flex flex-col items-center justify-center gap-6 md:gap-8">
+                        <div>
                             <AnimatePresence mode="wait">
                                 <MotionDiv
                                     layout
