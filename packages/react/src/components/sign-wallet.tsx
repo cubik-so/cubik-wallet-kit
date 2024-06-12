@@ -90,7 +90,7 @@ const SignWallet = () => {
             <Button
                 //can add onclick and isLoading
                 className="w-full"
-                variant="primary"
+                variant="secondary"
                 isLoading={signing}
                 onClick={verifySignature}
             >

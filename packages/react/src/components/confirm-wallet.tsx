@@ -13,7 +13,7 @@ const ConfirmWallet = () => {
             <Button
                 //can add onclick and isLoading
                 className="w-full"
-                variant="primary"
+                variant="secondary"
             >
                 Sign & Confirm
             </Button>
