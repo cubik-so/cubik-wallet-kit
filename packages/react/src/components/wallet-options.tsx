@@ -51,19 +51,19 @@ const WalletOptions = () => {
             </div>
         ))
 
-    let containerWidth = '410px'
+    let containerWidth = '100%'
     if (isMobileDevice) {
         containerWidth = '100%'
     } else {
         if (showMore) {
-            containerWidth = '510px'
+            containerWidth = '100%'
         }
     }
 
     return (
         <MotionDiv
             layout
-            className="rounded-xl bg-[var(--modal-body-surface)] overflow-hidden "
+            className="rounded-xl bg-[var(--modal-body-surface)] overflow-hidden px-2"
             style={{
                 width: containerWidth,
                 height: 'fit-content',
@@ -105,7 +105,7 @@ const WalletOptions = () => {
                 <AnimatePresence mode="wait">
                     <MotionDiv
                         layout
-                        className={`z-0 no-scrollbar flex flex-row justify-start items-center py-2`}
+                        className={`z-0 no-scrollbar flex flex-row justify-start items-center py-2 w-full mx-auto`}
                         style={{
                             flexWrap: isMobileDevice && !showMore ? 'nowrap' : 'wrap',
                             maxHeight: '320px',
