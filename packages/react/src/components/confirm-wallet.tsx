@@ -14,6 +14,7 @@ const ConfirmWallet = () => {
                 //can add onclick and isLoading
                 className="w-full"
                 variant="secondary"
+                size="xl"
             >
                 Sign & Confirm
             </Button>

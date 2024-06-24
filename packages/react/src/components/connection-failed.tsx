@@ -18,19 +18,20 @@ const ConnectionFailed = () => {
             <Button
                 //can add onclick and isLoading
                 className="w-full md:w-fit"
-                variant="primary"
+                variant="secondary"
                 isLoading={connecting}
                 onClick={(e) => lastConnected && handleConnectClick(e, lastConnected)}
                 leftIconName="rotate-right"
                 loadingText="Connecting"
+                size="xl"
             >
                 Retry
             </Button>
             <Button
                 onClick={() => setError(null)}
                 //can add onclick and isLoading
-                className="w-full md:w-fit no-underline"
-                variant="link"
+                className="w-full text-color-fg-primary-subdued"
+                variant="unStyled"
             >
                 Go Back
             </Button>

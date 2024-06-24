@@ -8,7 +8,7 @@ const RequestingConnection = () => {
     return (
         <>
             <div
-                className={`mx-auto w-fit rounded-full flex flex-col gap-4 items-center max-w-[280px] md:max-w-[360px] py-10 md:py-16`}
+                className={`mx-auto w-fit rounded-full flex flex-col gap-4 items-center max-w-[280px] md:max-w-[360px] py-10 md:px-6`}
             >
                 <Avatar
                     src={lastConnected?.icon as string}
@@ -32,6 +32,7 @@ const RequestingConnection = () => {
                         isLoading={true}
                         className="w-full"
                         loadingText="Connecting"
+                        size="xl"
                     ></Button>
 
                     <Button onClick={() => {}} size="md" variant="tertiary">

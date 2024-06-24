@@ -57,19 +57,20 @@ const SignWallet = () => {
             >
                 <Button
                     className="w-full md:w-fit"
-                    variant="primary"
+                    variant="secondary"
                     isLoading={signing}
                     onClick={verifySignature}
                     leftIconName="rotate-right"
                     loadingText="Signing"
+                    size="xl"
                 >
                     Retry
                 </Button>
                 <Button
                     onClick={() => setError(null)}
                     //can add onclick and isLoading
-                    className="w-full md:w-fit no-underline"
-                    variant="link"
+                    className="w-full text-color-fg-primary-subdued"
+                    variant="unStyled"
                 >
                     Go Back
                 </Button>
@@ -85,7 +86,8 @@ const SignWallet = () => {
             }
             icon={'wallet-link-duo-solid'}
             iconColor="var(--color-fg-info-base)"
-            bgColor="var(--color-surface-info-transparent)"
+            bgColor="var(--empty-state-icon-blue-fill)"
+            className="!md:py-0"
         >
             <Button
                 //can add onclick and isLoading
@@ -93,14 +95,15 @@ const SignWallet = () => {
                 variant="secondary"
                 isLoading={signing}
                 onClick={verifySignature}
+                size="xl"
             >
                 Sign & Confirm
             </Button>
             <Button
                 onClick={() => setError(null)}
                 //can add onclick and isLoading
-                className="w-full no-underline"
-                variant="link"
+                className="w-full text-color-fg-primary-subdued"
+                variant="unStyled"
             >
                 Go Back
             </Button>
