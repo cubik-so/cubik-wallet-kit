@@ -54,9 +54,10 @@ const SignWallet = () => {
                     'You have rejected the connection request or it has failed due to some reason. Please try again!'
                 }
                 icon={'danger-skull-duo-solid'}
+                className="!md:py-0 px-4"
             >
                 <Button
-                    className="w-full md:w-fit"
+                    className="w-full"
                     variant="secondary"
                     isLoading={signing}
                     onClick={verifySignature}
@@ -86,8 +87,8 @@ const SignWallet = () => {
             }
             icon={'wallet-link-duo-solid'}
             iconColor="var(--color-fg-info-base)"
-            bgColor="var(--empty-state-icon-blue-fill)"
-            className="!md:py-0"
+            bgColor="var(--color-surface-info-transparent)"
+            className="!md:py-0 px-4"
         >
             <Button
                 //can add onclick and isLoading

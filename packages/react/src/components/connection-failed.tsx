@@ -14,10 +14,11 @@ const ConnectionFailed = () => {
                 'You have rejected the connection request or it has failed due to some reason. Please try again!'
             }
             icon={'danger-skull-duo-solid'}
+            className="!md:py-0 px-4"
         >
             <Button
                 //can add onclick and isLoading
-                className="w-full md:w-fit"
+                className="w-full"
                 variant="secondary"
                 isLoading={connecting}
                 onClick={(e) => lastConnected && handleConnectClick(e, lastConnected)}

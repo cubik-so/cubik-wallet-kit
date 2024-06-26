@@ -9,6 +9,7 @@ const ConfirmWallet = () => {
                 'Sign a message in your connected wallet to confirm ownership of the wallet.'
             }
             icon={'SmartContractDuoSolid'}
+            className="!md:py-0 px-4"
         >
             <Button
                 //can add onclick and isLoading

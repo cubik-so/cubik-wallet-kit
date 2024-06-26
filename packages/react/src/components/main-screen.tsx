@@ -24,7 +24,7 @@ export const MainScreen = () => {
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.95 }}
                     transition={{ duration: 0.2 }}
-                    className="flex flex-col justify-center items-center text-center w-full max-w-[330px] gap-2"
+                    className="flex flex-col justify-center items-center text-center w-full max-w-[330px] gap-2 !px-6"
                 >
                     <RequestingConnection />
                 </MotionDiv>
