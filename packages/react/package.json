@@ -1,6 +1,6 @@
 {
     "name": "@wallet-kit/react",
-    "version": "1.1.7",
+    "version": "1.1.8",
     "description": "",
     "type": "module",
     "scripts": {
@@ -39,7 +39,7 @@
         "@solana/wallet-adapter-solflare": "^0.6.28",
         "@solana/wallet-adapter-walletconnect": "^0.1.16",
         "@solana/web3.js": "^1.91.4",
-        "@squaress/ui": "^0.0.61",
+        "@squaress/ui": "^0.0.67",
         "@tiplink/wallet-adapter": "^2.1.13",
         "framer-motion": "^10.18.0",
         "react": "^18.2.0",
