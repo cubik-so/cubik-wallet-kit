@@ -3,11 +3,11 @@ import { utils } from '@coral-xyz/anchor'
 import { toast } from '@squaress/ui/toast'
 import { useMediaQuery } from 'usehooks-ts'
 import Icon from '@squaress/ui/icons'
-import { AnimatePresence, MotionDiv } from 'lib/framer.js'
 
 import { Button, Text } from '../lib/ui/index.js'
 import { useWalletKit } from '../context/wallet-kit-value-provider.js'
 import { useWalletKitContext } from '../utils/provider.js'
+import { AnimatePresence, MotionDiv } from '../lib/framer.js'
 
 const SignWallet = () => {
     const isMobileDevice = useMediaQuery('only screen and (max-width : 768px)')

@@ -1,9 +1,11 @@
 import Icon from '@squaress/ui/icons'
-import { AnimatePresence, MotionDiv } from 'lib/framer.js'
+
+import { useMediaQuery } from 'usehooks-ts'
 import { Button, EmptyState, Text } from '../lib/ui/index.js'
 import { useHandleConnect } from '../hooks/handle-connect.js'
 import { useWalletKitContext } from '../utils/provider.js'
 import { useWalletKit } from '../context/wallet-kit-value-provider.js'
+import { AnimatePresence, MotionDiv } from '../lib/framer.js'
 
 const ConnectionFailed = () => {
     const { lastConnected, setError } = useWalletKitContext()
