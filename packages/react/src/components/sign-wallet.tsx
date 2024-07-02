@@ -83,7 +83,7 @@ const SignWallet = () => {
                             transition={{ duration: 0.2 }}
                             className="flex flex-col justify-center items-center text-center w-full max-w-[330px] gap-2"
                         >
-                            <Text className="h3 md:h4" color={'primary'}>
+                            <Text className="h4" color={'primary'}>
                                 Connection Failed
                             </Text>
                             <Text
@@ -179,7 +179,7 @@ const SignWallet = () => {
                         transition={{ duration: 0.2 }}
                         className="flex flex-col justify-center items-center text-center w-full max-w-[330px] gap-2"
                     >
-                        <Text className="h3 md:h4" color={'primary'}>
+                        <Text className="h4" color={'primary'}>
                             Verify Wallet
                         </Text>
                         <Text
