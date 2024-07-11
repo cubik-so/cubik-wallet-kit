@@ -160,7 +160,8 @@ const SignWallet = () => {
             {isMobileDevice}
             <div className="w-full h-fit bg-[var(--modal-body-surface)] rounded-xl px-4 py-8 flex flex-col items-center justify-center gap-4">
                 <MotionDiv
-                    className={`mx-auto w-fit rounded-full bg-[var(--color-surface-innovative-transparent)] p-4`}
+                    className={`mx-auto w-fit rounded-full p-4`}
+                    style={{ background: 'var(--color-surface-innovative-transparent)' }}
                 >
                     <Icon
                         name={'wallet-link-duo-solid'}

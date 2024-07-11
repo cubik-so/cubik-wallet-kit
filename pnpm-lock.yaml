@@ -43,8 +43,8 @@ importers:
         specifier: ^0.6.28
         version: 0.6.28(@solana/web3.js@1.91.4)
       '@squaress/ui':
-        specifier: ^0.0.67
-        version: 0.0.67(@babel/core@7.24.4)(@types/node@20.11.30)(@types/react-dom@18.2.24)(@types/react@18.2.74)(apexcharts@3.49.1)(postcss@8.4.31)(react-dom@18.2.0)(react@18.2.0)(typescript@5.4.3)
+        specifier: ^0.0.78
+        version: 0.0.78(@babel/core@7.24.4)(@types/node@20.11.30)(@types/react-dom@18.2.24)(@types/react@18.2.74)(apexcharts@3.49.1)(postcss@8.4.31)(react-dom@18.2.0)(react@18.2.0)(typescript@5.4.3)
       '@wallet-kit/react':
         specifier: workspace:*
         version: link:../../packages/react
@@ -194,8 +194,8 @@ importers:
         specifier: ^1.91.4
         version: 1.91.4
       '@squaress/ui':
-        specifier: ^0.0.67
-        version: 0.0.67(@babel/core@7.24.4)(@types/node@20.11.30)(@types/react-dom@18.2.24)(@types/react@18.2.74)(apexcharts@3.49.1)(postcss@8.4.31)(react-dom@18.2.0)(react@18.2.0)(typescript@5.4.3)
+        specifier: ^0.0.78
+        version: 0.0.78(@babel/core@7.24.4)(@types/node@20.11.30)(@types/react-dom@18.2.24)(@types/react@18.2.74)(apexcharts@3.49.1)(postcss@8.4.31)(react-dom@18.2.0)(react@18.2.0)(typescript@5.4.3)
       '@tiplink/wallet-adapter':
         specifier: ^2.1.13
         version: 2.1.13(@solana/web3.js@1.91.4)
@@ -5341,8 +5341,8 @@ packages:
       uuid: 9.0.1
     dev: false
 
-  /@squaress/ui@0.0.67(@babel/core@7.24.4)(@types/node@20.11.30)(@types/react-dom@18.2.24)(@types/react@18.2.74)(apexcharts@3.49.1)(postcss@8.4.31)(react-dom@18.2.0)(react@18.2.0)(typescript@5.4.3):
-    resolution: {integrity: sha512-P/B2Rd8KD9zJi/o30tueX7kcp5kekGBroS69v8Q47Ik1ztgzukZzcgBaHTJgKH1rVplBHH0VAKpJ0vA0dlO4RQ==}
+  /@squaress/ui@0.0.78(@babel/core@7.24.4)(@types/node@20.11.30)(@types/react-dom@18.2.24)(@types/react@18.2.74)(apexcharts@3.49.1)(postcss@8.4.31)(react-dom@18.2.0)(react@18.2.0)(typescript@5.4.3):
+    resolution: {integrity: sha512-aaflOgqErFqW7mSTer1zMgaECcKwAHKliS8NXldtffK3q642+mrYEZXPqdrtcFuKo1Jxo7OINtPMd7fyRY1upg==}
     dependencies:
       '@radix-ui/react-checkbox': 1.1.0(@types/react-dom@18.2.24)(@types/react@18.2.74)(react-dom@18.2.0)(react@18.2.0)
       '@radix-ui/react-dialog': 1.1.1(@types/react-dom@18.2.24)(@types/react@18.2.74)(react-dom@18.2.0)(react@18.2.0)
